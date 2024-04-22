@@ -1,4 +1,4 @@
-# Web Analyzer 🚀
+# Web Spider 🚀
 
 /**
  * Header
