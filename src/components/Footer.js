@@ -13,8 +13,7 @@ const Footer = () => {
         <ul className="footer-nav">
           <li><a href="#copyright" className="footer-link">Copyright</a></li>
           <li><a href="#links" className="footer-link">Links</a></li>
-          <li><a href="#address" className="footer-link">Address</a></li>
-          <li><a href="#contact" className="footer-link">Contact</a></li>
+          <li><a href="https://www.linkedin.com/in/priya-gupta-%F0%9F%9A%80-885107115/" target="_blank" className="footer-link">Contact</a></li>
         </ul>
       </div>
       </div>

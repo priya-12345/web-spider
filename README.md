@@ -11,6 +11,5 @@
  * Footer
  *  - Copyright
  *  - Links
- *  - Address
  *  - Contact
  */

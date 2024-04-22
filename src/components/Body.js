@@ -3,6 +3,7 @@ import axios from 'axios';
 import UrlInput from './UrlInput';
 import ImageCarousel from './ImageCarousel';
 import WordCount from './WordCount';
+import { PROXY_URL } from "../utils/constants";
 
 function Body() {
   const [images, setImages] = useState([]);
@@ -12,8 +13,7 @@ function Body() {
   const [showWordCount, setShowWordCount] = useState(false);[]
 
   const fetchImagesAndWords = async (url) => {
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    const targetUrl = proxyUrl + url;
+    const targetUrl = { PROXY_URL } + url;
     try {
       const response = await axios.get(targetUrl);
       const parser = new DOMParser();
@@ -24,14 +24,14 @@ function Body() {
       setImages(images);
       setShowImages(true);
   
-    // Extract text and count words
-    const text = htmlDoc.body.textContent || '';
-    const words = text.match(/\w+/g) || []; // Extract words using \w+ regex pattern
-    const wordFreq = {};
-    words.forEach(word => {
-    // Convert the word to lowercase before adding it to the frequency dictionary
-    const lowercaseWord = word.toLowerCase();
-    wordFreq[lowercaseWord] = (wordFreq[lowercaseWord] || 0) + 1;
+      // Extract text and count words
+      const text = htmlDoc.body.textContent || '';
+      const words = text.match(/\w+/g) || []; // Extract words using \w+ regex pattern
+      const wordFreq = {};
+      words.forEach(word => {
+      // Convert the word to lowercase before adding it to the frequency dictionary
+      const lowercaseWord = word.toLowerCase();
+      wordFreq[lowercaseWord] = (wordFreq[lowercaseWord] || 0) + 1;
     });
   
       // Sort word frequencies and get top 10
@@ -42,7 +42,7 @@ function Body() {
       setShowWordCount(true);
     } catch (error) {
       console.error('Error fetching images and words:', error);
-      // Handle the error (e.g., show a message to the user)
+      // Handle the error
       alert('Failed to fetch data. Please try again later.');
     }
   };
@@ -61,8 +61,7 @@ function Body() {
         </div>
       )}
     </div>
-  );
-  
+  ); 
 }
 
 export default Body;
