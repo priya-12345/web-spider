@@ -3,7 +3,6 @@ import axios from 'axios';
 import UrlInput from './UrlInput';
 import ImageCarousel from './ImageCarousel';
 import WordCount from './WordCount';
-import { PROXY_URL } from "../utils/constants";
 
 function Body() {
   const [images, setImages] = useState([]);
@@ -13,7 +12,8 @@ function Body() {
   const [showWordCount, setShowWordCount] = useState(false);[]
 
   const fetchImagesAndWords = async (url) => {
-    const targetUrl = { PROXY_URL } + url;
+    const proxyUrl="https://cors-anywhere.herokuapp.com/";
+    const targetUrl = proxyUrl + url;
     try {
       const response = await axios.get(targetUrl);
       const parser = new DOMParser();
