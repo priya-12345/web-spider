@@ -16,7 +16,6 @@ function Body() {
     const targetUrl = proxyUrl + url;
     try {
       const response = await axios.get(targetUrl);
-      console.log(response.data);
       const parser = new DOMParser();
       const htmlDoc = parser.parseFromString(response.data, 'text/html');
      

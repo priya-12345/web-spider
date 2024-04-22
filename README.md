@@ -5,11 +5,9 @@
  *  - Logo
  *  - Nav Items
  * Body
- *  - Search
- *  - RestaurantContainer
- *    - RestaurantCard
- *      - Img
- *      - Name of Res, Star Rating, cuisine, delery tie
+ *  - UrlInput
+ *  - ImageCarousel
+ *  - WordCount
  * Footer
  *  - Copyright
  *  - Links

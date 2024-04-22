@@ -51,7 +51,7 @@ body {
 
 .carousel .slide img {
     max-width: 100%;
-    height: auto;
+    height: 300px;
     object-fit: contain; /* Maintain aspect ratio and fit within container */
   }
   
@@ -63,11 +63,12 @@ h2 {
 .carousel {
   max-width: 600px;
   margin: 0 auto;
+  height: auto;
 }
 
 .carousel img {
   max-width: 100%;
-  height: auto;
+  height: 92px;
 }
   /* Header.css */
   .header {

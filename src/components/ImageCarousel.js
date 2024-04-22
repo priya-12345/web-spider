@@ -9,7 +9,7 @@ function ImageCarousel({ images }) {
 
   return (
     <div className="carousel-container">
-      <h2>Images</h2>
+      <h2>Gallery</h2>
       <Carousel>
         {filteredImages.map((src, index) => (
           <div key={index}>

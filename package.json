@@ -31,6 +31,8 @@
   },
   "dependencies": {
     "axios": "^1.6.8",
+    "node-libs-browser": "^2.2.1",
+    "parcel-bundler": "^1.12.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-responsive-carousel": "^3.2.23"
