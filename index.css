@@ -3,6 +3,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    min-height: 100vh; /* Set minimum height to full viewport height */
+    display: flex;
+    flex-direction: column;
   }
   
   .app {
@@ -72,12 +75,13 @@ h2 {
 }
   /* Header.css */
   .header {
-    background-color: #333;
+    background-color:grey;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
+    margin-bottom: 20px;
   }
   
   .logo-container {
@@ -94,9 +98,13 @@ h2 {
     list-style-type: none;
     padding: 0;
   }
-  
+  .nav-items li:hover {
+    text-decoration: underline;
+  }
   .nav-items li {
     margin-right: 20px;
+    color: white;
+    text-decoration: none;
   }
 
   /* WordCount.css */
@@ -133,4 +141,55 @@ h2 {
   tr:hover {
     background-color: #ddd;
   }
+
+  /* Footer.css */
+.footer {
+        background-color:grey;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        margin-top: 20px; /* Add margin to create a gap above the footer */
+  }
+  .main-content {
+    flex-grow: 1; /* Allow main content to grow and occupy remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px; /* Set minimum height for the main content area */
+  }
+
+  .url-input {
+    margin-bottom: 20px; /* Add margin to create space below the input */
+  }
+
+  .display-area {
+    margin-top: 20px; /* Add margin to create space above the display area */
+  }
+
+  .word-count-container {
+    margin-bottom: 20px; /* Add margin to create a gap below the WordCount component */
+  }
+      
+  .footer-nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
   
+  .footer-nav li {
+    margin-left: 20px;
+  }
+  
+  .footer-link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+ 

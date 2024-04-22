@@ -24,13 +24,15 @@ function Body() {
       setImages(images);
       setShowImages(true);
   
-      // Extract text and count words
-      const text = htmlDoc.body.textContent || '';
-      const words = text.split(/\s+/);
-      const wordFreq = {};
-      words.forEach(word => {
-        wordFreq[word] = (wordFreq[word] || 0) + 1;
-      });
+    // Extract text and count words
+    const text = htmlDoc.body.textContent || '';
+    const words = text.match(/\w+/g) || []; // Extract words using \w+ regex pattern
+    const wordFreq = {};
+    words.forEach(word => {
+    // Convert the word to lowercase before adding it to the frequency dictionary
+    const lowercaseWord = word.toLowerCase();
+    wordFreq[lowercaseWord] = (wordFreq[lowercaseWord] || 0) + 1;
+    });
   
       // Sort word frequencies and get top 10
       const sortedWords = Object.keys(wordFreq).sort((a, b) => wordFreq[b] - wordFreq[a]);
@@ -47,15 +49,15 @@ function Body() {
   
   return (
     <div>
-      <UrlInput onSubmit={fetchImagesAndWords} />
+      <UrlInput onSubmit={fetchImagesAndWords} className="url-input" />
       {showImages && (
         <div>
           <ImageCarousel images={images} />
         </div>
       )}
       {showWordCount && (
-        <div>
-          <WordCount wordCount={wordCount} topWords={topWords} />
+        <div className="display-area word-count-container">
+          <WordCount wordCount={wordCount} topWords={topWords}  />
         </div>
       )}
     </div>
